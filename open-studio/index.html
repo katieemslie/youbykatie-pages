@@ -1,0 +1,849 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Open Studio — You by Katie</title>
+<meta name="description" content="A fortnightly coworking space for creative professionals building sustainable businesses. Bring your work, borrow Katie's brain, get honest feedback. 30 members. Quarterly. Application-based.">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300;1,400&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --cream: #F7F4EF;
+    --ink: #1C1A17;
+    --warm-mid: #8C7B6B;
+    --accent: #C4A882;
+    --soft-rule: #E2DDD7;
+    --text-body: #3D3730;
+    --lavender: #e8d8ff;
+    --lavender-light: #f3edff;
+    --sage: #C5D5CB;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--cream);
+    color: var(--ink);
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 300;
+    line-height: 1.7;
+    font-size: 17px;
+  }
+
+  /* NAV */
+  nav {
+    padding: 28px 48px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid var(--soft-rule);
+    position: sticky;
+    top: 0;
+    background: var(--cream);
+    z-index: 100;
+  }
+
+  .nav-logo {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 18px;
+    font-weight: 400;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--ink);
+    text-decoration: none;
+  }
+
+  .nav-cta {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 12px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--ink);
+    text-decoration: none;
+    border-bottom: 1px solid var(--accent);
+    padding-bottom: 2px;
+    transition: color 0.2s;
+  }
+
+  .nav-cta:hover { color: var(--warm-mid); }
+
+  /* HERO */
+  .hero {
+    max-width: 860px;
+    margin: 0 auto;
+    padding: 100px 48px 80px;
+    text-align: center;
+  }
+
+  .eyebrow {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 12px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--warm-mid);
+    margin-bottom: 28px;
+    display: block;
+  }
+
+  h1 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(52px, 8vw, 92px);
+    font-weight: 300;
+    line-height: 1.02;
+    letter-spacing: -0.01em;
+    margin-bottom: 32px;
+    color: var(--ink);
+  }
+
+  h1 em { font-style: italic; color: var(--warm-mid); }
+
+  .hero-sub {
+    font-size: 18px;
+    color: var(--text-body);
+    max-width: 580px;
+    margin: 0 auto 20px;
+    line-height: 1.75;
+  }
+
+  .hero-detail {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 13px;
+    color: var(--warm-mid);
+    margin-bottom: 48px;
+  }
+
+  .pill-tag {
+    display: inline-block;
+    background: var(--ink);
+    color: var(--cream);
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    padding: 10px 22px;
+    border-radius: 100px;
+  }
+
+  /* UTILITIES */
+  .divider {
+    border: none;
+    border-top: 1px solid var(--soft-rule);
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+
+  section {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 80px 48px;
+  }
+
+  .section-label {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--warm-mid);
+    margin-bottom: 20px;
+    display: block;
+  }
+
+  h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(36px, 4.5vw, 54px);
+    font-weight: 300;
+    line-height: 1.12;
+    margin-bottom: 28px;
+  }
+
+  h2 em { font-style: italic; color: var(--warm-mid); }
+
+  p { color: var(--text-body); margin-bottom: 20px; }
+  p:last-child { margin-bottom: 0; }
+
+  .two-col {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: start;
+  }
+
+  /* DARK SECTIONS */
+  .dark-section {
+    background: var(--ink);
+    color: var(--cream);
+    padding: 80px 0;
+  }
+
+  .dark-section .inner {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 48px;
+  }
+
+  .dark-section h2 { color: var(--cream); }
+  .dark-section h2 em { color: var(--accent); }
+  .dark-section .section-label { color: var(--accent); }
+  .dark-section p { color: rgba(247, 244, 239, 0.75); }
+
+  /* CALLOUT BAR */
+  .callout-bar {
+    background: var(--lavender);
+    padding: 32px 48px;
+    text-align: center;
+  }
+
+  .callout-bar p {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 15px;
+    color: var(--ink);
+    max-width: 720px;
+    margin: 0 auto;
+    line-height: 1.65;
+  }
+
+  /* LAVENDER BAR */
+  .lavender-bar {
+    height: 6px;
+    background: var(--lavender);
+  }
+
+  /* PROBLEM SECTION */
+  .problem-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 48px;
+    margin-top: 48px;
+  }
+
+  .problem-card {
+    border-top: 1px solid rgba(247, 244, 239, 0.15);
+    padding-top: 24px;
+  }
+
+  .problem-card h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 22px;
+    font-weight: 400;
+    color: var(--cream);
+    margin-bottom: 10px;
+  }
+
+  .problem-card p {
+    font-size: 15px;
+    color: rgba(247, 244, 239, 0.6);
+    line-height: 1.7;
+  }
+
+  /* WHAT IT IS — INCLUDES */
+  .includes-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2px;
+    background: var(--soft-rule);
+    margin-top: 48px;
+  }
+
+  .include-item {
+    background: var(--cream);
+    padding: 40px 32px;
+  }
+
+  .include-num {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 48px;
+    font-weight: 300;
+    color: var(--soft-rule);
+    line-height: 1;
+    margin-bottom: 16px;
+  }
+
+  .include-item h3 {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: 0.02em;
+    color: var(--ink);
+    margin-bottom: 12px;
+  }
+
+  .include-item p {
+    font-size: 15px;
+    line-height: 1.7;
+    color: var(--warm-mid);
+    margin-bottom: 0;
+  }
+
+  /* NOT THIS / THIS IS */
+  .not-this {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0;
+    margin-top: 48px;
+  }
+
+  .not-col {
+    padding: 36px 32px;
+  }
+
+  .not-col.left {
+    background: rgba(247, 244, 239, 0.04);
+    border-right: 1px solid rgba(247, 244, 239, 0.1);
+  }
+
+  .not-col h3 {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+  }
+
+  .not-col.left h3 { color: rgba(247, 244, 239, 0.4); }
+  .not-col.right h3 { color: var(--accent); }
+
+  .not-item {
+    font-size: 15px;
+    margin-bottom: 14px;
+    padding-left: 22px;
+    position: relative;
+    line-height: 1.55;
+  }
+
+  .not-col.left .not-item { color: rgba(247, 244, 239, 0.35); }
+  .not-col.right .not-item { color: rgba(247, 244, 239, 0.7); }
+
+  .not-item::before {
+    position: absolute;
+    left: 0;
+    font-size: 13px;
+  }
+
+  .not-col.left .not-item::before { content: '✗'; color: rgba(247, 244, 239, 0.25); }
+  .not-col.right .not-item::before { content: '✓'; color: var(--accent); }
+
+  /* FOR YOU IF */
+  .for-you-list {
+    margin-top: 40px;
+  }
+
+  .for-you-item {
+    border-top: 1px solid var(--soft-rule);
+    padding: 20px 0;
+    display: flex;
+    align-items: baseline;
+    gap: 16px;
+  }
+
+  .for-you-item:last-child {
+    border-bottom: 1px solid var(--soft-rule);
+  }
+
+  .for-you-item .check {
+    font-size: 14px;
+    color: var(--accent);
+    flex-shrink: 0;
+  }
+
+  .for-you-item p {
+    font-size: 16px;
+    color: var(--text-body);
+    margin: 0;
+  }
+
+  /* ABOUT */
+  .about-section .two-col {
+    gap: 60px;
+    align-items: start;
+  }
+
+  .about-text p {
+    font-size: 16px;
+    line-height: 1.75;
+  }
+
+  /* PRICING */
+  .pricing-section {
+    text-align: center;
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 80px 48px;
+  }
+
+  .pricing-block {
+    background: var(--ink);
+    padding: 56px 48px;
+    margin-top: 32px;
+  }
+
+  .pricing-block .price {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 72px;
+    font-weight: 300;
+    color: var(--cream);
+    line-height: 1;
+    margin-bottom: 8px;
+  }
+
+  .pricing-block .period {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 13px;
+    color: rgba(247, 244, 239, 0.5);
+    letter-spacing: 0.08em;
+    margin-bottom: 28px;
+  }
+
+  .pricing-block p {
+    color: rgba(247, 244, 239, 0.6);
+    font-size: 15px;
+    max-width: 440px;
+    margin: 0 auto 8px;
+    line-height: 1.65;
+  }
+
+  .pricing-details {
+    margin-top: 32px;
+    padding-top: 24px;
+    border-top: 1px solid rgba(247, 244, 239, 0.12);
+  }
+
+  .pricing-details p {
+    font-size: 13px;
+    color: rgba(247, 244, 239, 0.45);
+    margin-bottom: 4px;
+  }
+
+  /* WAITLIST / FORM */
+  .waitlist-section {
+    text-align: center;
+    padding: 80px 48px 100px;
+    max-width: 680px;
+    margin: 0 auto;
+  }
+
+  .waitlist-section h2 {
+    margin-bottom: 16px;
+  }
+
+  .waitlist-section > p {
+    font-size: 17px;
+    margin-bottom: 40px;
+  }
+
+  .form-container {
+    max-width: 500px;
+    margin: 0 auto;
+    text-align: left;
+  }
+
+  .form-container input[type="text"],
+  .form-container input[type="email"],
+  .form-container textarea {
+    width: 100%;
+    padding: 14px 18px;
+    border: 1px solid var(--soft-rule);
+    background: white;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 15px;
+    font-weight: 300;
+    color: var(--ink);
+    margin-bottom: 12px;
+    outline: none;
+    transition: border-color 0.2s;
+    border-radius: 0;
+    -webkit-appearance: none;
+  }
+
+  .form-container input:focus,
+  .form-container textarea:focus {
+    border-color: var(--accent);
+  }
+
+  .form-container input::placeholder,
+  .form-container textarea::placeholder {
+    color: var(--warm-mid);
+  }
+
+  .form-container textarea {
+    height: 100px;
+    resize: vertical;
+  }
+
+  .form-label {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--warm-mid);
+    display: block;
+    margin-bottom: 6px;
+    margin-top: 12px;
+  }
+
+  .form-label:first-child { margin-top: 0; }
+
+  .btn-primary {
+    display: block;
+    width: 100%;
+    background: var(--ink);
+    color: var(--cream);
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 13px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    padding: 18px 44px;
+    border: none;
+    cursor: pointer;
+    transition: background 0.2s;
+    margin-top: 20px;
+    text-align: center;
+  }
+
+  .btn-primary:hover { background: var(--warm-mid); }
+
+  .form-note {
+    font-size: 13px;
+    color: var(--warm-mid);
+    margin-top: 16px;
+    text-align: center;
+  }
+
+  /* SUCCESS STATE */
+  .form-success {
+    display: none;
+    text-align: center;
+    padding: 40px 0;
+  }
+
+  .form-success h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 32px;
+    font-weight: 300;
+    color: var(--ink);
+    margin-bottom: 12px;
+  }
+
+  .form-success p {
+    font-size: 16px;
+    color: var(--warm-mid);
+  }
+
+  /* FOOTER */
+  footer {
+    padding: 40px 48px;
+    text-align: center;
+    border-top: 1px solid var(--soft-rule);
+  }
+
+  footer p {
+    font-size: 13px;
+    color: var(--warm-mid);
+  }
+
+  footer a {
+    color: var(--warm-mid);
+    text-decoration: none;
+    border-bottom: 1px solid var(--accent);
+  }
+
+  /* RESPONSIVE */
+  @media (max-width: 900px) {
+    .two-col, .problem-grid, .not-this, .includes-grid { grid-template-columns: 1fr; }
+    section, .dark-section .inner { padding-left: 24px; padding-right: 24px; }
+    nav { padding: 20px 24px; }
+    .hero { padding: 60px 24px 50px; }
+    .pricing-section { padding: 60px 24px; }
+    .pricing-block { padding: 40px 28px; }
+    .waitlist-section { padding: 60px 24px 80px; }
+    .callout-bar { padding: 28px 24px; }
+    .not-col { padding: 28px 24px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="https://www.youbykatie.com" class="nav-logo">You by Katie</a>
+  <a href="#waitlist" class="nav-cta">Join the waitlist</a>
+</nav>
+
+<!-- HERO -->
+<div class="hero">
+  <span class="eyebrow">Coming Soon</span>
+  <h1><em>Open</em><br>Studio</h1>
+  <p class="hero-sub">A fortnightly coworking space for creative professionals who want to build sustainable businesses without burning through their best resource: themselves.</p>
+  <p class="hero-detail">Bring your work. Borrow Katie's brain. Get honest feedback from people who get it.</p>
+  <span class="pill-tag">Expressions of interest now open</span>
+</div>
+
+<hr class="divider">
+
+<!-- THE CREATIVE CONUNDRUM -->
+<div class="dark-section">
+  <div class="inner">
+    <span class="section-label">The creative conundrum</span>
+    <h2>The very thing that makes<br>you good at your craft is<br><em>the thing that makes<br>running a business exhausting</em></h2>
+    <p style="max-width: 600px;">Nobody talks about this clearly enough. You see meaning and value in everything. You can't do things at 60%. So everything gets 100%. And you don't have 400% to give.</p>
+
+    <div class="problem-grid">
+      <div class="problem-card">
+        <h3>The brand gets 100%</h3>
+        <p>Your own visual identity becomes a personal art project. The website gets rebuilt when it didn't really need to. Beautiful work that nobody sees because you never shipped it.</p>
+      </div>
+      <div class="problem-card">
+        <h3>The admin gets 100%</h3>
+        <p>The invoice template is designed to perfection. The client onboarding process is beautifully crafted. All of it draining the creative energy meant for actual client work.</p>
+      </div>
+      <div class="problem-card">
+        <h3>Then the real work lands</h3>
+        <p>And you're already spent. The projects that actually pay you get whatever energy is left. Which isn't much.</p>
+      </div>
+      <div class="problem-card">
+        <h3>The stuff no one warns you about</h3>
+        <p>The sensitivity to rejection. The fear of putting work out there. The perfectionism that looks like high standards but feels like paralysis. The creeping question: is this sustainable?</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- CALLOUT -->
+<div class="callout-bar">
+  <p>You don't need another course. You don't need a guru. You need a room full of people who understand the specific challenge of building a business with a brain that wants to make everything beautiful.</p>
+</div>
+
+<!-- WHAT IT IS -->
+<section>
+  <span class="section-label">What Open Studio is</span>
+  <h2>A coworking space<br><em>for creative brains</em></h2>
+  <p style="max-width: 600px;">Think of it like having access to a creative strategist without them being your boss. A room where you can bring your work, talk through your ideas, sense-check things with other creatives, and borrow Katie's brain for a bit.</p>
+  <p style="max-width: 600px;">Not a course. Not a mastermind. Not a content library you'll never open. A fortnightly space to show up, do the thinking, and leave with clarity.</p>
+
+  <div class="includes-grid">
+    <div class="include-item">
+      <div class="include-num">01</div>
+      <h3>Fortnightly coworking sessions</h3>
+      <p>Two groups of 15, meeting every two weeks. Facilitated by Katie. Part conversation, part structured reflection, part practical strategy. Bring your projects, your half-formed ideas, the things you're stuck on. This is the room where the work gets better.</p>
+    </div>
+    <div class="include-item">
+      <div class="include-num">02</div>
+      <h3>Project sharing and feedback</h3>
+      <p>Show your work. Get honest feedback from creatives who understand the work and the business of it. This includes your own brand, your client projects, your business ideas. A space to sense-check things before you commit. No performance. No grades. Just real input.</p>
+    </div>
+    <div class="include-item">
+      <div class="include-num">03</div>
+      <h3>Borrow Katie's brain</h3>
+      <p>One 30-minute 1:1 session with Katie per quarter, included. Like having a creative strategist in the room who isn't your boss. Strategic feedback, honest perspective, 15 years of creative industry experience at your disposal.</p>
+    </div>
+    <div class="include-item">
+      <div class="include-num">04</div>
+      <h3>A community that actually works</h3>
+      <p>30 members max. Small enough that everyone is seen and heard. Intentionally curated through an application process. Creative professionals who've been doing this long enough to have real context for the conversations. No beginners asking how to find their first client. People in the thick of it.</p>
+    </div>
+  </div>
+</section>
+
+<hr class="divider">
+
+<!-- THIS IS NOT / THIS IS -->
+<div class="dark-section">
+  <div class="inner">
+    <span class="section-label">Setting expectations</span>
+    <h2>What this <em>isn't</em><br>and what it <em>is</em></h2>
+
+    <div class="not-this">
+      <div class="not-col left">
+        <h3>This is not</h3>
+        <div class="not-item">A course with modules and homework</div>
+        <div class="not-item">A mastermind with hot seats and accountability pressure</div>
+        <div class="not-item">A content library you pay for and forget</div>
+        <div class="not-item">A community that becomes another thing to manage</div>
+        <div class="not-item">Someone telling you to hustle harder or scale faster</div>
+        <div class="not-item">Therapy (though we'll talk about the stuff that gets in the way)</div>
+      </div>
+      <div class="not-col right">
+        <h3>This is</h3>
+        <div class="not-item">A facilitated space with structure and room to breathe</div>
+        <div class="not-item">A place to bring your work and get real feedback</div>
+        <div class="not-item">Access to a creative strategist without the corporate dynamics</div>
+        <div class="not-item">A small group who understand the specific creative challenge</div>
+        <div class="not-item">A fortnightly pause to think about your business with intention</div>
+        <div class="not-item">Permission to build at your own pace, sustainably</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- FOR YOU IF -->
+<section>
+  <span class="section-label">This is for you if</span>
+  <h2>You're a creative<br><em>in the thick of it</em></h2>
+
+  <div class="for-you-list">
+    <div class="for-you-item">
+      <span class="check">✓</span>
+      <p>You're a designer, artist, photographer, or creative professional running your own business</p>
+    </div>
+    <div class="for-you-item">
+      <span class="check">✓</span>
+      <p>You've been at this for at least 2-3 years. You're past the "getting started" phase and into the "how do I make this sustainable" phase</p>
+    </div>
+    <div class="for-you-item">
+      <span class="check">✓</span>
+      <p>You're talented at what you do but find the business side draining in a way that's hard to explain to non-creatives</p>
+    </div>
+    <div class="for-you-item">
+      <span class="check">✓</span>
+      <p>You've experienced the cycle of pouring creative energy into everything and having nothing left for the actual work</p>
+    </div>
+    <div class="for-you-item">
+      <span class="check">✓</span>
+      <p>You want a space to show your work, talk through ideas, and get honest feedback without the performance or the pressure</p>
+    </div>
+    <div class="for-you-item">
+      <span class="check">✓</span>
+      <p>You want community with other creatives who get it, led by someone with 15 years of experience who's been through the same cycle</p>
+    </div>
+    <div class="for-you-item">
+      <span class="check">✓</span>
+      <p>You want to build something sustainable. Not take over the world. Just do good work and keep doing it</p>
+    </div>
+  </div>
+</section>
+
+<!-- PRICING -->
+<div class="pricing-section">
+  <span class="section-label">Investment</span>
+  <h2>Simple<br><em>and clear</em></h2>
+
+  <div class="pricing-block">
+    <div class="price">$750</div>
+    <div class="period">per quarter</div>
+    <p>Fortnightly group sessions (two groups of 15). One 30-minute 1:1 with Katie per quarter. Community access. Application-based.</p>
+    <div class="pricing-details">
+      <p>Quarterly commitment. No lock-in beyond the current quarter.</p>
+      <p>Pause whenever you need to.</p>
+      <p>30 members maximum.</p>
+    </div>
+  </div>
+</div>
+
+<div class="lavender-bar"></div>
+
+<!-- ABOUT KATIE -->
+<section class="about-section">
+  <span class="section-label">Who's in the room with you</span>
+  <h2>Hi, I'm <em>Katie</em></h2>
+  <div class="two-col">
+    <div class="about-text">
+      <p>I'm a creative strategist, visual designer, and writer with 15 years in the professional creative space. I've been an art director, a marketing director, and a solo creative building a business from scratch.</p>
+      <p>I've lived the creative conundrum. I've poured all my energy into building the business and had nothing left for the work. I've redesigned my own brand more times than I'll admit. I've burnt out and rebuilt.</p>
+    </div>
+    <div class="about-text">
+      <p>Open Studio exists because I wish something like it had existed for me ten years ago. Not a course. Not a guru. Just a room full of creative people who understand the specific challenge, led by someone who's been in it long enough to know where to protect creative energy and where to let things be good enough.</p>
+      <p>I'm based in Brisbane, Australia. I believe the most sustainable thing a creative professional can learn is where to stop.</p>
+    </div>
+  </div>
+</section>
+
+<hr class="divider">
+
+<!-- WAITLIST FORM -->
+<div id="waitlist" class="waitlist-section">
+  <span class="eyebrow">Expressions of Interest</span>
+  <h2>Join the<br><em>waitlist</em></h2>
+  <p>Open Studio is coming soon. Register your interest below and you'll be the first to know when applications open. No spam. No sales sequences. Just a heads up when we're ready.</p>
+
+  <div class="form-container" id="form-wrapper">
+    <label class="form-label">First name</label>
+    <input type="text" id="field-name" placeholder="Your first name">
+
+    <label class="form-label">Email</label>
+    <input type="email" id="field-email" placeholder="you@example.com">
+
+    <label class="form-label">What kind of creative work do you do?</label>
+    <input type="text" id="field-work" placeholder="e.g. graphic designer, photographer, illustrator">
+
+    <label class="form-label">Optional: What's the biggest challenge you face running a creative business?</label>
+    <textarea id="field-challenge" placeholder="No wrong answers. This helps shape what Open Studio becomes."></textarea>
+
+    <button class="btn-primary" id="submit-btn" onclick="submitForm()">Count me in</button>
+
+    <p class="form-note" id="form-message">Your information is safe. No spam. Unsubscribe anytime.</p>
+  </div>
+
+  <div class="form-success" id="form-success">
+    <h3>You're on the list.</h3>
+    <p>I'll be in touch when Open Studio is ready to open its doors. In the meantime, keep making things.</p>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <p>&copy; 2026 You by Katie. Brisbane, Australia. <a href="https://www.youbykatie.com">youbykatie.com</a></p>
+</footer>
+
+<script>
+async function submitForm() {
+  const name = document.getElementById('field-name').value.trim();
+  const email = document.getElementById('field-email').value.trim();
+  const work = document.getElementById('field-work').value.trim();
+  const challenge = document.getElementById('field-challenge').value.trim();
+  const btn = document.getElementById('submit-btn');
+  const msg = document.getElementById('form-message');
+
+  if (!name || !email) {
+    msg.textContent = 'Please fill in your name and email.';
+    msg.style.color = '#8C7B6B';
+    return;
+  }
+
+  // Basic email validation
+  if (!email.includes('@') || !email.includes('.')) {
+    msg.textContent = 'Please enter a valid email address.';
+    msg.style.color = '#8C7B6B';
+    return;
+  }
+
+  btn.textContent = 'Sending...';
+  btn.disabled = true;
+  btn.style.opacity = '0.7';
+
+  try {
+    const response = await fetch('https://api.jotform.com/form/260562664011046/submissions', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/x-www-form-urlencoded',
+      },
+      body: new URLSearchParams({
+        'submission[3]': name,
+        'submission[4]': email,
+        'submission[5]': work + (challenge ? ' | Challenge: ' + challenge : '')
+      })
+    });
+
+    if (!response.ok) {
+      throw new Error('API submission failed');
+    }
+
+    // Show success state
+    document.getElementById('form-wrapper').style.display = 'none';
+    document.getElementById('form-success').style.display = 'block';
+
+  } catch (e) {
+    // Fallback: open Jotform directly
+    const jotformUrl = `https://form.jotform.com/260562664011046`;
+    window.open(jotformUrl, '_blank');
+
+    msg.textContent = "A form opened in a new tab. Please submit there.";
+    msg.style.color = '#8C7B6B';
+    btn.textContent = 'Count me in';
+    btn.disabled = false;
+    btn.style.opacity = '1';
+  }
+}
+</script>
+
+</body>
+</html>
